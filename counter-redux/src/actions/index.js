@@ -12,8 +12,9 @@ export const decrement=()=>{
     }
 }
 
-export const multiple=()=>{
+export const multiple=(multiplier)=>{
     return{
-        type: types.MULTIPLE
+        type: types.MULTIPLE,
+        multiplier
     }
 }

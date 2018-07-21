@@ -13,7 +13,7 @@ const render = () => ReactDOM.render(
         state={store.getState()}
         onIncrement={() => store.dispatch(increment())}
         onDecrement={() => store.dispatch(decrement())}
-        onMultiple={() => store.dispatch(multiple())}
+        onMultiple={(multiplier) => store.dispatch(multiple(multiplier))}
     />,
     rootEl
 )

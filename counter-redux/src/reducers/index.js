@@ -1,11 +1,13 @@
+import * as types from '../constants/ActionType'
+
 export default (state = 0, action) => {
     switch (action.type){
-        case 'INCREMENT':
+        case types.INCREMENT:
             return state + 1;
-        case 'DECREMENT':
+        case types.DECREMENT:
             return state - 1;
-        case 'MULTIPLE':
-            return state * 2;
+        case types.MULTIPLE:
+            return state * action.multiplier;
         default:
             return state 
     }

@@ -4,7 +4,13 @@ class App extends Component {
 
   constructor(props) {
     super(props);
+    this.inputText = React.createRef();
+  }
 
+  multiple=()=>{
+    const multiplier = this.inputText.current.value
+    const onMultiple = this.props.onMultiple;
+    onMultiple(multiplier)
   }
 
   render() {
@@ -15,7 +21,8 @@ class App extends Component {
           Clicked: {state} times {' '}
           <button onClick={onIncrement}> + </button>
           <button onClick={onDecrement}> - </button>
-          <button onClick={onMultiple}> x2 </button>
+          <input type="text" defaultValue={0} ref={this.inputText}></input>
+          <button onClick={this.multiple}> x </button>
         </p >
       </div>
     );
