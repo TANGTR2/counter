@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
 import App from './App'
 import counter from './reducers'
+import {increment, decrement, multiple} from "./actions";
 
 const store = createStore(counter)
 const rootEl = document.getElementById('root')
@@ -10,9 +11,9 @@ const rootEl = document.getElementById('root')
 const render = () => ReactDOM.render(
     <App
         state={store.getState()}
-        onIncrement={() => store.dispatch({ type: 'INCREMENT' })}
-        onDecrement={() => store.dispatch({ type: 'DECREMENT' })}
-        onMultiple={() => store.dispatch({ type: 'MULTIPLE' })}
+        onIncrement={() => store.dispatch(increment())}
+        onDecrement={() => store.dispatch(decrement())}
+        onMultiple={() => store.dispatch(multiple())}
     />,
     rootEl
 )
