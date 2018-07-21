@@ -8,10 +8,12 @@ export default class Counter extends Component{
 
     increase =() =>{
         this.setState({count:this.state.count +1})
+        this.props.count(1)
     }
 
     decrease =() =>{
         this.setState({count:this.state.count -1})
+        this.props.count(-1)
     }
 
     render(){
