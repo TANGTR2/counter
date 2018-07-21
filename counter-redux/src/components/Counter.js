@@ -10,16 +10,16 @@ class Counter extends Component {
   multiple=()=>{
     const multiplier = this.inputText.current.value
     const onMultiple = this.props.onMultiple;
-    onMultiple(multiplier)
+    onMultiple(multiplier,this.props.index)
   }
 
   render() {
-    const { state, onIncrement, onDecrement,onMultiple } = this.props;
+    const { state, onIncrement, onDecrement,onMultiple,index } = this.props;
     return (
         <div>
           Clicked: {state} times {' '}
-          <button onClick={onIncrement}> + </button>
-          <button onClick={onDecrement}> - </button>
+          <button onClick={()=>onIncrement(index)}> + </button>
+          <button onClick={()=>onDecrement(index)}> - </button>
           <input type="text" defaultValue={0} ref={this.inputText}></input>
           <button onClick={this.multiple}> x </button>
         </div >

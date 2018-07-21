@@ -1,20 +1,23 @@
 import * as types from '../constants/ActionType'
 
-export const increment=()=>{
+export const increment=(index)=>{
     return{
-        type:types.INCREMENT
+        type:types.INCREMENT,
+        index
     }
 }
 
-export const decrement=()=>{
+export const decrement=(index)=>{
     return{
-        type: types.DECREMENT
+        type: types.DECREMENT,
+        index
     }
 }
 
-export const multiple=(multiplier)=>{
+export const multiple=(multiplier,index)=>{
     return{
         type: types.MULTIPLE,
-        multiplier
+        multiplier,
+        index
     }
 }

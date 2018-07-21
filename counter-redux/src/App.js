@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Counter from './components/Counter';
+import CounterGroup from './components/CounterGroup';
 
 class App extends Component {
 
@@ -7,11 +8,12 @@ class App extends Component {
     const { state, onIncrement, onDecrement,onMultiple } = this.props;
     return (
       <div className="App">
-        <Counter
+        <CounterGroup
           state={state}
           onIncrement={onIncrement}
           onDecrement={onDecrement}
-          onMultiple={onMultiple}/>
+          onMultiple={onMultiple}
+          amount={2}/>
       </div>
     );
   }

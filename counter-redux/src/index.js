@@ -11,9 +11,9 @@ const rootEl = document.getElementById('root')
 const render = () => ReactDOM.render(
     <App
         state={store.getState()}
-        onIncrement={() => store.dispatch(increment())}
-        onDecrement={() => store.dispatch(decrement())}
-        onMultiple={(multiplier) => store.dispatch(multiple(multiplier))}
+        onIncrement={(index) => store.dispatch(increment(index))}
+        onDecrement={(index) => store.dispatch(decrement(index))}
+        onMultiple={(multiplier,index) => store.dispatch(multiple(multiplier,index))}
     />,
     rootEl
 )
