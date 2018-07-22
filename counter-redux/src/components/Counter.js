@@ -13,6 +13,11 @@ class Counter extends Component {
     onMultiple(multiplier,this.props.index)
   }
 
+  incrementAsync=()=>{
+    const onIncrement = this.props.onIncrement;
+    setTimeout(()=>{ onIncrement(this.props.index,1)},1000);
+  }
+
   render() {
     const { state, onIncrement, onDecrement,onMultiple,index } = this.props;
     return (
@@ -22,6 +27,7 @@ class Counter extends Component {
           <button onClick={()=>onDecrement(index)}> - </button>
           <input type="text" defaultValue={0} ref={this.inputText}></input>
           <button onClick={this.multiple}> x </button>
+          <button onClick={this.incrementAsync}> Increment async </button>
         </div >
     );
   }
